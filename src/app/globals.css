@@ -2,32 +2,73 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
-}
-
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  background-color: #e83b3e; /* Set the background color directly */
+  overflow: hidden; /* Prevent scroll bar from appearing */
 }
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
+.logo {
+  position: absolute;
+  top: 35px; /* Adjust as needed */
+  left: 50%;
+  transform: translateX(-50%);
+  width: 350px; /* Adjust as needed */
+}
+
+.qr-code {
+  border: 5px solid black; /* Add black border */
+  position: relative; /* Position relative for absolute positioning of the icon */
+  display: inline-block; /* Ensure the QR code size adjusts */
+}
+
+.icon-overlay {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width:45px;
+  height:45px;
+  transform: translate(-50%, -50%); /* Center the icon */
+  pointer-events: none; /* Make the icon not interactable */
+}
+
+.message {
+  position: absolute;
+  bottom: 20px; /* Adjust as needed */
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 38px; /* Make the text larger */
+  color: white;
+  opacity: 0.35;
+  text-align: center;
+}
+
+@keyframes snowflakes-fall {
+  0% {
+    top: -10%;
   }
+  100% {
+    top: 110%;
+  }
+}
+
+@keyframes snowflakes-shake {
+  0%, 100% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(40px); /* Adjust shake range */
+  }
+}
+
+.drop-gif {
+  position: absolute;
+  top: -10%;
+  opacity: 35%;
+  animation: snowflakes-fall 10s linear infinite, snowflakes-shake 3s ease-in-out infinite;
+  z-index: 9999;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  cursor: default;
 }
