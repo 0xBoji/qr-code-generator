@@ -14,13 +14,13 @@ function getRandomEmoji() {
 }
 
 function getRandomSize() {
-  const sizes = [25,30,45];
+  const sizes = [25, 30, 45];
   const randomIndex = Math.floor(Math.random() * sizes.length);
   return sizes[randomIndex];
 }
 
-function generateUniquePositions(count) {
-  const positions = [];
+function generateUniquePositions(count: number) {
+  const positions: number[] = [];
   while (positions.length < count) {
     const left = Math.floor(Math.random() * 90) + 5; // Between 5% and 95%
     if (!positions.includes(left)) {
