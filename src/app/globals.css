@@ -3,22 +3,22 @@
 @tailwind utilities;
 
 body {
-  background-color: #e83b3e; 
-  overflow: hidden; 
+  background-color: #e83b3e; /* Set the background color directly */
+  overflow: hidden; /* Prevent scroll bar from appearing */
 }
 
 .logo {
   position: absolute;
-  top: 35px; 
+  top: 35px; /* Adjust as needed */
   left: 50%;
   transform: translateX(-50%);
-  width: 350px; 
+  width: 350px; /* Adjust as needed */
 }
 
 .qr-code {
-  border: 5px solid black;
-  position: relative;
-  display: inline-block; 
+  border: 5px solid black; /* Add black border */
+  position: relative; /* Position relative for absolute positioning of the icon */
+  display: inline-block; /* Ensure the QR code size adjusts */
 }
 
 .icon-overlay {
@@ -27,16 +27,16 @@ body {
   left: 50%;
   width:45px;
   height:45px;
-  transform: translate(-50%, -50%); 
-  pointer-events: none; 
+  transform: translate(-50%, -50%); /* Center the icon */
+  pointer-events: none; /* Make the icon not interactable */
 }
 
 .message {
   position: absolute;
-  bottom: 20px; 
+  bottom: 20px; /* Adjust as needed */
   left: 50%;
   transform: translateX(-50%);
-  font-size: 38px; 
+  font-size: 38px; /* Make the text larger */
   color: white;
   opacity: 0.35;
   text-align: center;
@@ -56,7 +56,7 @@ body {
     transform: translateX(0);
   }
   50% {
-    transform: translateX(40px); 
+    transform: translateX(40px); /* Adjust shake range */
   }
 }
 

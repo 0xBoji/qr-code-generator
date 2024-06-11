@@ -3,7 +3,7 @@
 import { usePathname } from 'next/navigation';
 import { useEffect, useRef, useState } from 'react';
 import html2canvas from 'html2canvas';
-
+import Image from 'next/image';
 const size = 200; // Set a size for the QR code
 
 const emojis = ["😆", "😎", "😅", "😍", "😭", "🤑", "🤮", "💩", "💀", "🫨", "🤌", "💧"];
@@ -56,9 +56,9 @@ export default function QRDisplay() {
   }
 
   const gifs = [
-    "https://stashdrop.org/assets/images/stashdrop_money.gif",
-    "https://stashdrop.org/assets/images/pile-of-poo.gif",
-    "https://stashdrop.org/assets/images/stashdrop_diamond.gif"
+    "/images/stashdrop_money.gif",
+    "/images/pile-of-poo.gif",
+    "/images/stashdrop_diamond.gif"
   ];
 
   const gifCount = gifs.length * 6;
@@ -83,7 +83,7 @@ export default function QRDisplay() {
 
   return (
     <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <img className="logo" src="https://stashdrop.org/assets/images/stashdrop_logo_text.svg" alt="Logo" />
+      <Image className="logo" src="/images/stashdrop_logo_text.svg" width="200" height="200" alt="Logo" />
       <div ref={qrRef} className="mt-8 flex flex-wrap gap-4 justify-center">
         {qrCodes.length === 0 ? (
           <p>No QR codes found for this hash.</p>
@@ -91,8 +91,8 @@ export default function QRDisplay() {
           qrCodes.map((qrCode, index) => (
             <div key={index} className="flex flex-col items-center m-2">
               <div style={{ position: 'relative', display: 'inline-block' }}>
-                <img className="qr-code" src={qrCode} width={size} height={size} alt={`Generated QR Code ${index + 1}`} />
-                <img src="https://stashdrop.org/assets/images/stashdrop_money.gif" className="icon-overlay"/>
+                <Image className="qr-code" src={qrCode} width={size} height={size} alt={`Generated QR Code ${index + 1}`} />
+                <Image src="/images/stashdrop_money.gif" alt="money" width="200" height="200" className="icon-overlay"/>
               </div>
               <p>{getRandomEmoji()}</p>
             </div>
