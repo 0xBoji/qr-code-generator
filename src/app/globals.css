@@ -4,7 +4,6 @@
 
 body {
   background-color: #e83b3e; /* Set the background color directly */
-  overflow: hidden; /* Prevent scroll bar from appearing */
 }
 
 .logo {
@@ -46,7 +45,9 @@ body {
   text-align: center;
   font-family: 'Poppins', sans-serif;
   -webkit-text-stroke: 2px black; /* Add text stroke */
-  text-stroke: 2px black;
+  text-stroke: 2px black; 
+  z-index: 9999; 
+  position: fixed;
 }
 
 @keyframes snowflakes-fall {
@@ -68,7 +69,7 @@ body {
 }
 
 .drop-gif {
-  position: absolute;
+  position: fixed;
   top: -10%;
   opacity: 35%;
   animation: snowflakes-fall 10s linear infinite, snowflakes-shake 3s ease-in-out infinite;
