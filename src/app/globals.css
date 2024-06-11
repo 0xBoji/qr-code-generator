@@ -9,37 +9,44 @@ body {
 
 .logo {
   position: absolute;
-  top: 35px; /* Adjust as needed */
+  top: 35px; 
   left: 50%;
   transform: translateX(-50%);
-  width: 350px; /* Adjust as needed */
+  width: 350px; 
 }
 
 .qr-code {
-  border: 5px solid black; /* Add black border */
+  border: 5px solid black; 
   position: relative; /* Position relative for absolute positioning of the icon */
-  display: inline-block; /* Ensure the QR code size adjusts */
+  display: inline-block;
+  border-radius: 05%;
 }
 
 .icon-overlay {
   position: absolute;
   top: 50%;
   left: 50%;
+  border-radius: 25%;
+  border: 2px solid black; 
   width:45px;
   height:45px;
-  transform: translate(-50%, -50%); /* Center the icon */
-  pointer-events: none; /* Make the icon not interactable */
+  transform: translate(-50%, -50%); 
+  pointer-events: none; 
 }
 
 .message {
   position: absolute;
-  bottom: 20px; /* Adjust as needed */
+  bottom: 20px; 
   left: 50%;
   transform: translateX(-50%);
   font-size: 38px; /* Make the text larger */
+  font-weight: 700; 
   color: white;
   opacity: 0.35;
   text-align: center;
+  font-family: 'Poppins', sans-serif;
+  -webkit-text-stroke: 2px black; /* Add text stroke */
+  text-stroke: 2px black;
 }
 
 @keyframes snowflakes-fall {
@@ -56,7 +63,7 @@ body {
     transform: translateX(0);
   }
   50% {
-    transform: translateX(40px); /* Adjust shake range */
+    transform: translateX(40px); 
   }
 }
 

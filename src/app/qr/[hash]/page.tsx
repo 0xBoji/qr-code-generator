@@ -92,7 +92,7 @@ export default function QRDisplay() {
             <div key={index} className="flex flex-col items-center m-2">
               <div style={{ position: 'relative', display: 'inline-block' }}>
                 <Image className="qr-code" src={qrCode} width={size} height={size} alt={`Generated QR Code ${index + 1}`} />
-                <Image src="/images/stashdrop_money.gif" alt="money" width="200" height="200" className="icon-overlay"/>
+                <Image src="/images/logo.jpg" alt="money" width="55" height="55" className="icon-overlay"/>
               </div>
               <p>{getRandomEmoji()}</p>
             </div>
@@ -100,7 +100,7 @@ export default function QRDisplay() {
         )}
       </div>
       <div className="message text-center mt-8 text-white opacity-35">
-        Scan to get stashs 🤓☝️
+        SCAN TO GET STASHES 🤓☝️
       </div>
       <div className="gif-container mt-8 flex flex-wrap gap-4 justify-center">
         {gifElements}
