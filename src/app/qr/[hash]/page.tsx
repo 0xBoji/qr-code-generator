@@ -92,7 +92,7 @@ export default function QRDisplay() {
             <div key={index} className="flex flex-col items-center m-2">
               <div style={{ position: 'relative', display: 'inline-block' }}>
                 <Image className="qr-code" src={qrCode} width={size} height={size} alt={`Generated QR Code ${index + 1}`} />
-                <Image src="/images/logo.jpg" alt="money" width="55" height="55" className="icon-overlay"/>
+                <Image src="/images/logo1.jpg" alt="money" width="55" height="55" className="icon-overlay"/>
               </div>
               <p>{getRandomEmoji()}</p>
             </div>
